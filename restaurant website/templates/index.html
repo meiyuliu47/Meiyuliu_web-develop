@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Code generated using ChatGPT -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width, initial-scale=1.0">
+  <title>Index</title>
+</head>
+
+<body>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  <ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endwith %}
+
+
+</body>
+
+</html>

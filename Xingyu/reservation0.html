@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Reservation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="navbar">欢迎注册</div>
+        <form method="post" action="/reservation">
+            <div class="form-group">
+                <label for="user_id">User ID</label>
+                <input type="text" id="user_id" name="user_id" placeholder="请输入用户名" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reservation_date">Reservation Date</label>
+                <input type="text" id="reservation_date" name="reservation_date" placeholder="请输入用户名" required>
+            </div>
+
+            <div class="form-group">
+                <label for="time">time</label>
+                <input type="text" id="time" name="time" placeholder="请输入用户名" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">email</label>
+                <input type="text" id="emai" name="email" placeholder="请输入密码" required>
+            </div>
+
+            <div class="form-group">
+                <label for="number_of_people">number_of_people</label>
+                <input type="text" id="number_of_people" name="number_of_people" placeholder="请输入密码" required>
+            </div>
+
+            <div class="form-group">
+                <label for="special_request">special_request</label>
+                <input type="text" id="special_request" name="special_request" placeholder="请输入密码" required>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+        <a href="/login" class="link">已有账号？登录</a>
+        <div class="footer">版权所有 &copy; 你的学校或组织名称</div>
+    </div>
+</body>
+
+</html>

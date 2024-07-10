@@ -1,0 +1,51 @@
+Documentation for EBEMS (E-Business Event Management System)
+
+1. System Overview:
+EBEMS is a Python-based system designed to manage and organize virtual events for businesses. It facilitates the management of webinars, workshops, and conferences, providing functionalities to create and modify events, register attendees, collect feedback, and generate detailed reports.
+
+2. Database Structure:
+2.1 Events Database:
+Structure: A dictionary where each key is an event ID, and the value is another dictionary containing event details.
+Fields: Each event's dictionary includes event_name, speaker_name, event_date, event_time, topic, capacity, and attendees (a list of attendees' names).
+
+2.2 Customer Points Database:
+Structure: A dictionary where each key is a customer's name, and the value is their accumulated loyalty points.
+Purpose: Track loyalty points earned by customers for attending events.
+
+2.3 Event Feedback Database:
+Structure: A dictionary where each key is an event ID, and the value is a list of tuples containing attendee feedback.
+Each tuple in the feedback list includes attendee_name, feedback_score, and feedback_comment.
+
+3. Key Decisions:
+Data Storage: Python dictionaries were chosen for their simplicity and efficiency in managing small-scale data, ideal for a prototype or a system with a limited number of events and attendees.
+Feedback Mechanism: A simple feedback system allows attendees to rate events and provide comments, enabling event organizers to gauge the success of their events and gather insights for improvement.
+Loyalty Points System: A system to incentivize and reward attendees for their participation, potentially leading to increased engagement and loyalty.
+Report Generation: Functionality to generate comprehensive reports that include attendance data, average feedback scores, and individual comments, providing a holistic view of each event's success.
+
+4. Test Scenarios and Expected Outcomes
+
+4.1 Event Creation:
+Input: Creating an event with specific details (name, date, speaker, etc.).
+Expected Outcome: The event is added to the events database with all provided details.
+
+4.2 Attendee Registration:
+Input: Registering an attendee for an event.
+Expected Outcome: The attendee's name is added to the event's attendee list. Loyalty points are updated accordingly.
+
+4.3 Feedback Submission:
+Input: An attendee submits feedback for an event.
+Expected Outcome: Feedback is stored in the event feedback database. The system should handle cases where non-registered attendees attempt to submit feedback.
+
+4.4 Event Report Generation:
+Input: Requesting a report for a specific event.
+Expected Outcome: The system generates a report displaying total attendance, average feedback score, and individual feedback comments.
+
+4.5 Event Information Retrieval Test
+Input:
+print(ebems.get_event(1))
+Expected Outcome:
+Detailed information about the event with ID 1 is displayed.
+This includes the current state of the event, such as the list of attendees and any other relevant details.
+
+5. Summary
+This documentation provides an overview of the EBEMS system, outlining its key functionalities, database structure, decisions made during development, and a basic testing framework. For a full-scale implementation, additional features such as user authentication, web interface integration, and advanced data management would be necessary.
